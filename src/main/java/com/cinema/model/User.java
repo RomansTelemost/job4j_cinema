@@ -1,18 +1,25 @@
 package com.cinema.model;
 
+import java.util.Map;
 import java.util.Objects;
 
-public class Users {
+public class User {
 
+    public static final Map<String, String> COLUMN_MAPPING = Map.of(
+            "id", "id",
+            "full_name", "fullName",
+            "email", "email",
+            "password", "password"
+    );
     private int id;
     private String fullName;
     private String email;
     private String password;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(int id, String fullName, String email, String password) {
+    public User(int id, String fullName, String email, String password) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
@@ -59,8 +66,8 @@ public class Users {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Users users = (Users) o;
-        return id == users.id && fullName.equals(users.fullName) && email.equals(users.email) && password.equals(users.password);
+        User user = (User) o;
+        return id == user.id && fullName.equals(user.fullName) && email.equals(user.email) && password.equals(user.password);
     }
 
     @Override

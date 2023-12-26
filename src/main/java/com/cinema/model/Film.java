@@ -1,8 +1,20 @@
 package com.cinema.model;
 
+import java.util.Map;
 import java.util.Objects;
 
-public class Films {
+public class Film {
+
+    public static final Map<String, String> COLUMN_MAPPING = Map.of(
+            "id", "id",
+            "title", "title",
+            "description", "description",
+            "film_year", "year",
+            "genre_id", "genreId",
+            "minimal_age", "minimalAge",
+            "duration_in_minutes", "duration",
+            "file_id", "fileId"
+    );
 
     private int id;
     private String name;
@@ -13,11 +25,11 @@ public class Films {
     private int durationInMinutes;
     private int fileId;
 
-    public Films() {
+    public Film() {
     }
 
-    public Films(int id, String name, int year, int genreId,
-                 int minimalAge, int durationInMinutes, int fileId) {
+    public Film(int id, String name, int year, int genreId,
+                int minimalAge, int durationInMinutes, int fileId) {
         this.id = id;
         this.name = name;
         this.year = year;
@@ -99,8 +111,8 @@ public class Films {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Films films = (Films) o;
-        return id == films.id && year == films.year && genreId == films.genreId && minimalAge == films.minimalAge && durationInMinutes == films.durationInMinutes && fileId == films.fileId && name.equals(films.name) && description.equals(films.description);
+        Film film = (Film) o;
+        return id == film.id && year == film.year && genreId == film.genreId && minimalAge == film.minimalAge && durationInMinutes == film.durationInMinutes && fileId == film.fileId && name.equals(film.name) && description.equals(film.description);
     }
 
     @Override

@@ -2,16 +2,16 @@ package com.cinema.model;
 
 import java.util.Objects;
 
-public class Files {
+public class File {
 
     private int id;
     private String name;
     private String path;
 
-    public Files() {
+    public File() {
     }
 
-    public Files(int id, String name, String path) {
+    public File(int id, String name, String path) {
         this.id = id;
         this.name = name;
         this.path = path;
@@ -49,8 +49,8 @@ public class Files {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Files files = (Files) o;
-        return id == files.id && Objects.equals(name, files.name) && Objects.equals(path, files.path);
+        File file = (File) o;
+        return id == file.id && Objects.equals(name, file.name) && Objects.equals(path, file.path);
     }
 
     @Override

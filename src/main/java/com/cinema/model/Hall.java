@@ -1,19 +1,27 @@
 package com.cinema.model;
 
+import java.util.Map;
 import java.util.Objects;
 
-public class Halls {
+public class Hall {
 
+    public static final Map<String, String> COLUMN_MAPPING = Map.of(
+            "id", "id",
+            "name", "name",
+            "row_count", "rowCount",
+            "place_count", "placeCount",
+            "description", "description"
+    );
     private int id;
     private String name;
     private int rowCount;
     private int placeCount;
     private String description;
 
-    public Halls() {
+    public Hall() {
     }
 
-    public Halls(int id, String name, int rowCount, int placeCount, String description) {
+    public Hall(int id, String name, int rowCount, int placeCount, String description) {
         this.id = id;
         this.name = name;
         this.rowCount = rowCount;
@@ -69,8 +77,8 @@ public class Halls {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Halls halls = (Halls) o;
-        return id == halls.id && rowCount == halls.rowCount && placeCount == halls.placeCount && Objects.equals(name, halls.name) && Objects.equals(description, halls.description);
+        Hall hall = (Hall) o;
+        return id == hall.id && rowCount == hall.rowCount && placeCount == hall.placeCount && Objects.equals(name, hall.name) && Objects.equals(description, hall.description);
     }
 
     @Override

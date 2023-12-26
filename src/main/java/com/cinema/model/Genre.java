@@ -2,15 +2,15 @@ package com.cinema.model;
 
 import java.util.Objects;
 
-public class Genres {
+public class Genre {
 
     private int id;
     private String name;
 
-    public Genres() {
+    public Genre() {
     }
 
-    public Genres(int id, String name) {
+    public Genre(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -39,8 +39,8 @@ public class Genres {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Genres genres = (Genres) o;
-        return id == genres.id && Objects.equals(name, genres.name);
+        Genre genre = (Genre) o;
+        return id == genre.id && Objects.equals(name, genre.name);
     }
 
     @Override

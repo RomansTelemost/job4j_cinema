@@ -1,10 +1,19 @@
 package com.cinema.model;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 import java.util.Objects;
 
-public class FilmSessions {
+public class FilmSession {
 
+    public static final Map<String, String> COLUMN_MAPPING = Map.of(
+            "id", "id",
+            "film_id", "filmId",
+            "halls_id", "hallId",
+            "start_time", "startTime",
+            "end_time", "endTime",
+            "price", "price"
+    );
     private int id;
     private int filmId;
     private int hallsId;
@@ -12,10 +21,10 @@ public class FilmSessions {
     private LocalDateTime endTime;
     private int price;
 
-    public FilmSessions() {
+    public FilmSession() {
     }
 
-    public FilmSessions(int id, int filmId, int hallsId, LocalDateTime startTime, LocalDateTime endTime, int price) {
+    public FilmSession(int id, int filmId, int hallsId, LocalDateTime startTime, LocalDateTime endTime, int price) {
         this.id = id;
         this.filmId = filmId;
         this.hallsId = hallsId;
@@ -80,7 +89,7 @@ public class FilmSessions {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        FilmSessions that = (FilmSessions) o;
+        FilmSession that = (FilmSession) o;
         return id == that.id && filmId == that.filmId && hallsId == that.hallsId && price == that.price && startTime.equals(that.startTime) && endTime.equals(that.endTime);
     }
 

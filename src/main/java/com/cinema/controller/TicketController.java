@@ -1,4 +1,4 @@
 package com.cinema.controller;
 
-public class TicketsController {
+public class TicketController {
 }

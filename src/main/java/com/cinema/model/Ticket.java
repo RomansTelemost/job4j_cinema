@@ -2,7 +2,7 @@ package com.cinema.model;
 
 import java.util.Objects;
 
-public class Tickets {
+public class Ticket {
 
     private int id;
     private int sessionId;
@@ -10,10 +10,10 @@ public class Tickets {
     private int placeNumber;
     private int userId;
 
-    public Tickets() {
+    public Ticket() {
     }
 
-    public Tickets(int id, int sessionId, int rowNumber, int placeNumber, int userId) {
+    public Ticket(int id, int sessionId, int rowNumber, int placeNumber, int userId) {
         this.id = id;
         this.sessionId = sessionId;
         this.rowNumber = rowNumber;
@@ -69,8 +69,8 @@ public class Tickets {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Tickets tickets = (Tickets) o;
-        return id == tickets.id && sessionId == tickets.sessionId && rowNumber == tickets.rowNumber && placeNumber == tickets.placeNumber && userId == tickets.userId;
+        Ticket ticket = (Ticket) o;
+        return id == ticket.id && sessionId == ticket.sessionId && rowNumber == ticket.rowNumber && placeNumber == ticket.placeNumber && userId == ticket.userId;
     }
 
     @Override
