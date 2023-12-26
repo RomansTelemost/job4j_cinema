@@ -1,8 +1,10 @@
 package com.cinema.repository.genre;
 
 import com.cinema.model.Genre;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
+@Repository
 public class Sql2oGenreRepository implements GenreRepository {
 
     private final Sql2o sql2o;
