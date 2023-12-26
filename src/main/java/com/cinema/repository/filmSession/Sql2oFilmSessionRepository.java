@@ -1,11 +1,13 @@
 package com.cinema.repository.filmSession;
 
 import com.cinema.model.FilmSession;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
 import java.util.Collection;
 import java.util.Optional;
 
+@Repository
 public class Sql2oFilmSessionRepository implements FilmSessionRepository {
 
     private final Sql2o sql2o;

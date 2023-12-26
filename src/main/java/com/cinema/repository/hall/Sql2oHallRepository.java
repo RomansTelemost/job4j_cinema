@@ -1,8 +1,10 @@
 package com.cinema.repository.hall;
 
 import com.cinema.model.Hall;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
+@Repository
 public class Sql2oHallRepository implements HallRepository {
     private final Sql2o sql2o;
 

@@ -7,12 +7,12 @@ public class Film {
 
     public static final Map<String, String> COLUMN_MAPPING = Map.of(
             "id", "id",
-            "title", "title",
+            "name", "name",
             "description", "description",
             "film_year", "year",
             "genre_id", "genreId",
             "minimal_age", "minimalAge",
-            "duration_in_minutes", "duration",
+            "duration_in_minutes", "durationInMinutes",
             "file_id", "fileId"
     );
 

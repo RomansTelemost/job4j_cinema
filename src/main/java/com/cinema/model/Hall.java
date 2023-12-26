@@ -50,7 +50,7 @@ public class Hall {
     }
 
     public void setRowCount(int rowCount) {
-        rowCount = rowCount;
+        this.rowCount = rowCount;
     }
 
     public int getPlaceCount() {

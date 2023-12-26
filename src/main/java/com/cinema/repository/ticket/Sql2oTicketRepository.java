@@ -4,11 +4,12 @@ import com.cinema.model.Ticket;
 import com.cinema.repository.user.Sql2oUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
 import java.util.Optional;
 
-
+@Repository
 public class Sql2oTicketRepository implements TicketRepository {
     private static final Logger LOG = LoggerFactory.getLogger(Sql2oUserRepository.class.getName());
     private final Sql2o sql2o;

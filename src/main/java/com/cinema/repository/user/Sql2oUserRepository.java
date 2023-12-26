@@ -3,10 +3,12 @@ package com.cinema.repository.user;
 import com.cinema.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
 import java.util.Optional;
 
+@Repository
 public class Sql2oUserRepository implements UserRepository {
     private static final Logger LOG = LoggerFactory.getLogger(Sql2oUserRepository.class.getName());
     private final Sql2o sql2o;
@@ -20,10 +22,10 @@ public class Sql2oUserRepository implements UserRepository {
         try (var connection = sql2o.open()) {
             var sql = """
                     INSERT INTO users(full_name, email, password)
-                    VALUES (:name, :email, :password)
+                    VALUES (:full_name, :email, :password)
                     """;
             var query = connection.createQuery(sql, true)
-                    .addParameter("name", user.getFullName())
+                    .addParameter("full_name", user.getFullName())
                     .addParameter("email", user.getEmail())
                     .addParameter("password", user.getPassword());
             int generatedId = query.executeUpdate().getKey(Integer.class);
