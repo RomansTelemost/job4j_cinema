@@ -1,4 +1,4 @@
-package com.cinema.repository.filmSession;
+package com.cinema.repository.filmsession;
 
 import com.cinema.model.FilmSession;
 

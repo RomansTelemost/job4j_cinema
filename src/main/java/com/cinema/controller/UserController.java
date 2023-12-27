@@ -26,6 +26,7 @@ public class UserController {
     public String getRegistrationPage() {
         return "users/register";
     }
+
     @PostMapping("/register")
     public String register(Model model, @ModelAttribute User user) {
         var savedUser = userService.save(user);

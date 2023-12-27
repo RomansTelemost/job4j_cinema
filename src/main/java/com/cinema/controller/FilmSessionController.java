@@ -1,6 +1,6 @@
 package com.cinema.controller;
 
-import com.cinema.service.filmSession.FilmSessionService;
+import com.cinema.service.filmsession.FilmSessionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

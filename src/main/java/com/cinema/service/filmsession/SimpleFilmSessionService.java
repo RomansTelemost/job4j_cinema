@@ -1,9 +1,9 @@
-package com.cinema.service.filmSession;
+package com.cinema.service.filmsession;
 
 import com.cinema.dto.FilmSessionDto;
 import com.cinema.dto.SessionPlaceDto;
 import com.cinema.model.FilmSession;
-import com.cinema.repository.filmSession.FilmSessionRepository;
+import com.cinema.repository.filmsession.FilmSessionRepository;
 import com.cinema.service.film.FilmService;
 import com.cinema.service.hall.HallService;
 import net.jcip.annotations.ThreadSafe;
