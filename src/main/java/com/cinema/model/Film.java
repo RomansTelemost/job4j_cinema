@@ -1,5 +1,7 @@
 package com.cinema.model;
 
+import com.cinema.dto.FilmDto;
+
 import java.util.Map;
 import java.util.Objects;
 
@@ -28,15 +30,21 @@ public class Film {
     public Film() {
     }
 
-    public Film(int id, String name, int year, int genreId,
-                int minimalAge, int durationInMinutes, int fileId) {
-        this.id = id;
-        this.name = name;
-        this.year = year;
-        this.genreId = genreId;
-        this.minimalAge = minimalAge;
-        this.durationInMinutes = durationInMinutes;
-        this.fileId = fileId;
+    public Film(FilmBuilder filmBuilder) {
+        if (filmBuilder == null) {
+            throw new IllegalArgumentException("FilmBuilder has not found!");
+        }
+        if (filmBuilder.id == 0) {
+            throw new IllegalArgumentException("Provide film id");
+        }
+        this.id = filmBuilder.id;
+        this.name = filmBuilder.name;
+        this.description = filmBuilder.description;
+        this.year = filmBuilder.year;
+        this.minimalAge = filmBuilder.minimalAge;
+        this.durationInMinutes = filmBuilder.durationInMinutes;
+        this.genreId = filmBuilder.genreId;
+        this.fileId = filmBuilder.fileId;
     }
 
     public int getId() {
@@ -132,5 +140,74 @@ public class Film {
                 + ", durationInMinutes=" + durationInMinutes
                 + ", fileId=" + fileId
                 + '}';
+    }
+
+    public static class FilmBuilder {
+        private int id;
+        private String name;
+        private String description;
+        private int year;
+        private int minimalAge;
+        private int durationInMinutes;
+        private int genreId;
+        private int fileId;
+
+        public FilmBuilder() {
+            super();
+        }
+
+        public FilmBuilder filmId(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public FilmBuilder filmTitle(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public FilmBuilder filmDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public FilmBuilder filmYear(int year) {
+            this.year = year;
+            return this;
+        }
+
+        public FilmBuilder filmMinimalAge(int minimalAge) {
+            this.minimalAge = minimalAge;
+            return this;
+        }
+
+        public FilmBuilder filmDurationInMinutes(int durationInMinutes) {
+            this.durationInMinutes = durationInMinutes;
+            return this;
+        }
+
+        public FilmBuilder filmGenre(int genreId) {
+            this.genreId = genreId;
+            return this;
+        }
+
+        public FilmBuilder filmFileId(int fileId) {
+            this.fileId = fileId;
+            return this;
+        }
+
+        public Film build() {
+            Film film;
+            if (validateFile()) {
+                film = new Film(this);
+            } else {
+                throw new IllegalArgumentException("Film objects can't be build without required details");
+            }
+            return film;
+        }
+
+        private boolean validateFile() {
+            return (id != 0);
+        }
     }
 }

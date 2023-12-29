@@ -32,11 +32,16 @@ public class SimpleFilmService implements FilmService {
     public Collection<FilmDto> findAll() {
         var films = filmRepository.findAll();
         for (Film film : films) {
-            FilmDto filmDto = new FilmDto(film.getId(),
-                    film.getName(), film.getDescription(),
-                    film.getYear(), film.getMinimalAge(),
-                    film.getDurationInMinutes(),
-                    genreService.findById(film.getGenreId()).getName(), film.getId());
+            FilmDto filmDto = new FilmDto.FilmDtoBuilder()
+                    .filmDtoId(film.getId())
+                    .filmDtoTitle(film.getName())
+                    .filmDtoDescription(film.getDescription())
+                    .filmDtoYear(film.getYear())
+                    .filmDtoMinimalAge(film.getMinimalAge())
+                    .filmDtoDuration(film.getDurationInMinutes())
+                    .filmDtoGenre(genreService.findById(film.getGenreId()).getName())
+                    .filmDtoFileId(film.getId())
+                    .build();
             filmsDto.putIfAbsent(film.getId(), filmDto);
         }
         return filmsDto.values();

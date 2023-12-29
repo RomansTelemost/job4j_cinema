@@ -1,6 +1,6 @@
-INSERT INTO files(id, name, path) values(1, 'Hobbit-1', 'C:/Hobbit/part1');
-INSERT INTO files(id, name, path) values(2, 'Shutter island', 'C:/Shutter island');
-INSERT INTO files(id, name, path) values(3, 'Yes man', 'C:/Yes man');
+INSERT INTO files(id, name, path) values(1, 'Hobbit-1', 'files/Hobbit as unexpected journey.jpg');
+INSERT INTO files(id, name, path) values(2, 'Shutter island', 'files/Shutter island.jpg');
+INSERT INTO files(id, name, path) values(3, 'Yes man', 'files/Yes man.jpg');
 
 INSERT INTO genres(id, name) values(1, 'Adventures');
 INSERT INTO genres(id, name) values(2, 'Thriller');
@@ -14,8 +14,8 @@ INSERT INTO halls(id, name, row_count, place_count, description) values(1, 'Firs
 INSERT INTO halls(id, name, row_count, place_count, description) values(2, 'Second hall', 10, 15, 'S');
 INSERT INTO halls(id, name, row_count, place_count, description) values(3, 'Third hall', 15, 16, 'T');
 
-INSERT INTO film_sessions(id, film_id, halls_id, start_time, end_time, price) values(1, 1, 1, timestamp '2017-10-12 21:22:23', timestamp '2017-10-12 21:22:23', 210);
-INSERT INTO film_sessions(id, film_id, halls_id, start_time, end_time, price) values(2, 2, 2, timestamp '2017-10-12 21:22:23', timestamp '2017-10-12 21:22:23', 160);
-INSERT INTO film_sessions(id, film_id, halls_id, start_time, end_time, price) values(3, 3, 3, timestamp '2017-10-12 21:22:23', timestamp '2017-10-12 21:22:23', 130);
+INSERT INTO film_sessions(id, film_id, halls_id, start_time, end_time, price) values(1, 1, 1, timestamp '2017-10-12 20:22:23', timestamp '2017-10-12 21:22:24', 210);
+INSERT INTO film_sessions(id, film_id, halls_id, start_time, end_time, price) values(2, 2, 2, timestamp '2017-10-13 21:22:23', timestamp '2017-10-13 22:22:23', 160);
+INSERT INTO film_sessions(id, film_id, halls_id, start_time, end_time, price) values(3, 3, 3, timestamp '2017-10-14 22:22:23', timestamp '2017-10-14 23:22:23', 130);
 
 
