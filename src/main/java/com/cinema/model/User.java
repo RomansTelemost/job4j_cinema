@@ -67,12 +67,12 @@ public class User {
             return false;
         }
         User user = (User) o;
-        return id == user.id && fullName.equals(user.fullName) && email.equals(user.email) && password.equals(user.password);
+        return id == user.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fullName, email, password);
+        return Objects.hash(id);
     }
 
     @Override

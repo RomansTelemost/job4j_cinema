@@ -32,7 +32,7 @@ public class TicketController {
             model.addAttribute("message",
                     "Не удалось приобрести билет на данное место. "
                             + "Вероятно оно уже занято." + "Попробуйте заново выбрать место");
-            return "error/400";
+            return "error/409";
         }
         model.addAttribute("message",
                 String.format("Вы успешно приобрели билет. Ряд: %s, место: %s",

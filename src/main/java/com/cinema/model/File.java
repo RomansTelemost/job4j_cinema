@@ -50,12 +50,12 @@ public class File {
             return false;
         }
         File file = (File) o;
-        return id == file.id && Objects.equals(name, file.name) && Objects.equals(path, file.path);
+        return id == file.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, path);
+        return Objects.hash(id);
     }
 
     @Override

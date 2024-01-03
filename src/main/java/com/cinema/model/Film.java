@@ -120,12 +120,12 @@ public class Film {
             return false;
         }
         Film film = (Film) o;
-        return id == film.id && year == film.year && genreId == film.genreId && minimalAge == film.minimalAge && durationInMinutes == film.durationInMinutes && fileId == film.fileId && name.equals(film.name) && description.equals(film.description);
+        return id == film.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, year, genreId, minimalAge, durationInMinutes, fileId);
+        return Objects.hash(id);
     }
 
     @Override

@@ -90,12 +90,12 @@ public class FilmSession {
             return false;
         }
         FilmSession that = (FilmSession) o;
-        return id == that.id && filmId == that.filmId && hallId == that.hallId && price == that.price && startTime.equals(that.startTime) && endTime.equals(that.endTime);
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, filmId, hallId, startTime, endTime, price);
+        return Objects.hash(id);
     }
 
     @Override
