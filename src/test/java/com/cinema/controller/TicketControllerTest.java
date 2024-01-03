@@ -77,7 +77,7 @@ public class TicketControllerTest {
         var view = ticketController.register(model, mockHttpSession, new Ticket());
         var actualMessage = model.getAttribute("message");
 
-        assertThat(view).isEqualTo("error/400");
+        assertThat(view).isEqualTo("error/409");
         assertThat(actualMessage).isEqualTo("Не удалось приобрести билет на данное место. Вероятно оно уже занято.Попробуйте заново выбрать место");
     }
 }
