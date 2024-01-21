@@ -23,8 +23,6 @@ public class SimpleFilmSessionService implements FilmSessionService {
     private final HallService hallService;
     private final FilmService filmService;
     private final ConcurrentHashMap<Integer, FilmSessionDto> sessionPlaces = new ConcurrentHashMap<>();
-    private final AtomicInteger countRows = new AtomicInteger();
-    private final AtomicInteger countPlaces = new AtomicInteger();
     private final Collection<Integer> savedPlaces = new ConcurrentLinkedQueue<>();
     private final Collection<Integer> savedRows = new ConcurrentLinkedQueue<>();
 
@@ -40,12 +38,11 @@ public class SimpleFilmSessionService implements FilmSessionService {
         var session = sessionRepository.findById(id).get();
         var film = filmService.findById(session.getFilmId()).get();
         var hall = hallService.findById(session.getHallId());
-        while (countRows.incrementAndGet() <= hall.getRowCount()) {
-            savedRows.add(countRows.get());
+        for (int i = 1; i <= hall.getRowCount(); i++) {
+            savedRows.add(i);
         }
-        int placeInRowCount = hall.getPlaceCount() / hall.getRowCount();
-        while (countPlaces.incrementAndGet() <= placeInRowCount) {
-            savedPlaces.add(countPlaces.get());
+        for (int i = 1; i <= hall.getPlaceCount(); i++) {
+            savedPlaces.add(i);
         }
         return new SessionPlaceDto(
                 session.getId(), film, FORMATTER.format(session.getStartTime()),
